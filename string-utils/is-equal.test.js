@@ -43,11 +43,11 @@ describe('Тесты is-equal', () => {
     });
 
     test('Должна выбросить TypeError если первый аргумент не строка 123, "hello"', () => {
-        expect(isEqual(123, "hello")).toThrow(TypeError);
+        expect(() => isEqual(123, "hello")).toThrow(TypeError);
     });
 
     test('Должна выбросить TypeError если второй аргумент не строка "hello", null', () => {
-        expect(isEqual("hello", null)).toThrow(TypeError);
+        expect(() => isEqual("hello", null)).toThrow(TypeError);
     });
 
 });
