@@ -1,8 +1,9 @@
+import {
+    checkStrings
+} from "./helpers/checkStrings";
 export function isNotEqual(a, b) {
 
-    if (typeof a !== 'string' || typeof b !== 'string') {
-        throw new TypeError('Аргумент должен быть строкой');
-    }
+    checkStrings(a, b);
     let lenA = 0;
     let lenB = 0;
     let i = 0;

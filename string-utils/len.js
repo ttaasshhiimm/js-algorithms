@@ -1,12 +1,14 @@
+import {
+    checkString
+} from "./helpers/checkStrings";
 export function len(str) {
 
-    if(typeof str !== 'string') {
-        throw new TypeError('Аргумент должен быть строкой');
-    }
+    checkString(str);
+
     let count = 0;
     let i = 0;
 
-    while(str[i] !== undefined) {
+    while (str[i] !== undefined) {
         count++;
         i++;
     }

@@ -1,10 +1,9 @@
+import {
+    checkStrings
+} from "./helpers/checkStrings";
 export function isMoreOrEqual(a, b) {
-    
-    if (typeof a !== 'string' || typeof b !== 'string') {
-        throw new TypeError('Аргумент должен быть строкой');
-    }
 
-    
+    checkStrings(a, b);
     let lenA = 0;
     let i = 0;
     while (a[i] !== undefined) {
@@ -12,7 +11,7 @@ export function isMoreOrEqual(a, b) {
         i++;
     }
 
-    
+
     let lenB = 0;
     let j = 0;
     while (b[j] !== undefined) {
@@ -26,15 +25,15 @@ export function isMoreOrEqual(a, b) {
     }
 
     for (let i = 0; i < minLen; i++) {
-        
+
         if (a.charCodeAt(i) > b.charCodeAt(i)) {
             return true;
         }
-    
+
         if (a.charCodeAt(i) < b.charCodeAt(i)) {
             return false;
         }
-        
+
     }
 
 
