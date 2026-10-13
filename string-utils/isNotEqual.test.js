@@ -7,6 +7,7 @@ import {
     isNotEqual
 } from './isNotEqual';
 
+
 describe('Тесты isNotEqual', () => {
     test('должна вернуть true для разных строк "hello","world"', () => {
         expect(isNotEqual('hello', 'world')).toEqual(true);

@@ -1,22 +1,20 @@
-import { checkStrings } from "./helpers/checkStrings";
+import {
+    checkStrings
+} from "./helpers/checkStrings";
+import {
+    len
+} from "./len";
+
+
+
+
 export function indexOf(str, search) {
 
-    checkStrings(str,search);
+    checkStrings(str, search);
 
-    let lenStr = 0;
-    let lenSearch = 0;
-    let i = 0;
-    let j = 0;
+    let lenStr = len(str);
+    let lenSearch = len(search);
 
-    while (str[i] !== undefined) {
-        lenStr++;
-        i++;
-    }
-
-    while (search[j] !== undefined) {
-        lenSearch++;
-        j++;
-    }
 
     if (lenSearch > lenStr) {
         return -1;
