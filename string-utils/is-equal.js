@@ -1,27 +1,16 @@
-import { checkStrings } from "./helpers/checkStrings";
+import { len } from './len';
+import { checkStrings } from './helpers/checkStrings';
+
+
+
 export function isEqual(a, b) {
-    
-    checkStrings(a,b);
+    checkStrings(a, b);
 
-    let lenA = 0;
-    let lenB = 0;
-    let i = 0;
-    let j = 0;
-
-    while (a[i] !== undefined) {
-        lenA++;
-        i++;
-    }
-
-    while (b[j] !== undefined) {
-        lenB++;
-        j++;
-    }
-
-    
+    const lenA = len(a);
+    const lenB = len(b);
 
     if (lenA !== lenB) {
-        return false
+        return false;
     }
 
     for (let i = 0; i < lenA; i++) {
@@ -29,8 +18,6 @@ export function isEqual(a, b) {
             return false;
         }
     }
-
-
 
     return true;
 }

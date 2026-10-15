@@ -1,23 +1,18 @@
 import {
     checkStrings
 } from "./helpers/checkStrings";
+
+import { len } from "./len";
+
+
+
+
 export function isMoreOrEqual(a, b) {
 
     checkStrings(a, b);
-    let lenA = 0;
-    let i = 0;
-    while (a[i] !== undefined) {
-        lenA++;
-        i++;
-    }
-
-
-    let lenB = 0;
-    let j = 0;
-    while (b[j] !== undefined) {
-        lenB++;
-        j++;
-    }
+    
+    const lenA = len(a);
+    const lenB = len(b);
 
     let minLen = lenA;
     if (lenB < minLen) {
