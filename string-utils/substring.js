@@ -4,6 +4,9 @@ import {
 import {
     checkString
 } from './helpers/checkStrings';
+import {
+    checkNumber
+} from './helpers/checkNumber';
 
 
 
@@ -32,15 +35,11 @@ import {
 export function substring(str, start, end) {
 
     checkString(str);
+    checkNumber(start);
+    checkNumber(end);
     const strLen = len(str);
     let strStart = start;
     let strEnd = end;
-
-
-
-    if (typeof strStart !== 'number' || (typeof strEnd !== 'number' && typeof strEnd !== 'undefined')) {
-        throw new TypeError('Аргумент должен быть числом!');
-    }
 
 
     if (typeof strEnd !== 'number') {
