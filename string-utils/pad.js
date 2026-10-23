@@ -34,6 +34,7 @@ import {
 
 
 export function pad(str, length, char, side) {
+    
     checkString(str);
     checkNumber(length);
     checkString(char);
