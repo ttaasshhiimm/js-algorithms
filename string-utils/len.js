@@ -3,12 +3,6 @@ import {
 } from "./helpers/checkStrings";
 
 
-
-
-
-
-
-
 /**
  * Возвращает длину строки str — количество символов в ней.
  * Подсчёт ведётся вручную, посимвольно, без использования .length.
@@ -27,11 +21,8 @@ export function len(str) {
 
     checkString(str);
     let i = 0;
-
     while (str[i] !== undefined) {
-
         i++;
     }
-
     return i;
 }
