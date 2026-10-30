@@ -4,11 +4,6 @@ import {len} from "./len";
 
 
 
-
-
-
-
-
 /**
  * Заменяет все вхождения подстроки search в строке str на replacement.
  * Заменённый текст не участвует в дальнейшем поиске.
@@ -29,6 +24,7 @@ import {len} from "./len";
  */
 
 export function replaceAll(str, search, replacement) {
+    
     checkString(str);
     checkString(search);
     checkString(replacement);

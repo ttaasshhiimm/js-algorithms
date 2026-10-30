@@ -23,13 +23,11 @@ export function toLowerCase(str) {
 
     for (let i = 0; i < strLen; i++) {
         const code = str.charCodeAt(i);
-
         if ((code >= 65 && code <= 90) || (code >= 1040 && code <= 1071)) {
             result += String.fromCodePoint(code + 32);
         } else {
             result += str[i];
         }
     }
-
     return result;
 }

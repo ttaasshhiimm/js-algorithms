@@ -40,12 +40,10 @@ export function replace(str, search, replacement) {
     for (let i = 0; i < index; i++) {
         result += str[i];
     }
-
     result += replacement;
 
     for (let i = index + searchLen; i < strLen; i++) {
         result += str[i];
     }
-
     return result;
 }

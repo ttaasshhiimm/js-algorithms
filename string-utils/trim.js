@@ -1,9 +1,6 @@
-import {checkString} from './helpers/checkStrings';
-import {len} from './len';
-
-
-
-
+import { checkString } from './helpers/checkStrings';
+import { len } from './len';
+import { substring } from './substring';
 
 /**
  * Удаляет пробелы в начале и конце строки.
@@ -20,8 +17,6 @@ import {len} from './len';
  *   trim('');                 // ''
  *   trim('  hello world  ');  // 'hello world'
  */
-
-
 export function trim(str) {
     checkString(str);
     const strLen = len(str);
@@ -36,9 +31,5 @@ export function trim(str) {
         end--;
     }
 
-    let result = '';
-    for (let i = start; i < end; i++) {
-        result += str[i];
-    }
-    return result;
+    return substring(str, start, end);
 }

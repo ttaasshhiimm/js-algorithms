@@ -33,8 +33,7 @@ import {
 
 
 
-export function pad(str, length, char, side) {
-    
+export function pad(str, length, char, side) {    
     checkString(str);
     checkNumber(length);
     checkString(char);
@@ -74,13 +73,11 @@ export function pad(str, length, char, side) {
         for (let i = 0; i < right; i++) {
             rightPart += temp[left + i];
         }
-
         return leftPart + str + rightPart;
     }
 
     if (side !== 'left' || side !== 'right' || side !== 'both') {
         throw new TypeError('Аргумент должен быть left или right или both');
     }
-
     return str;
 }
