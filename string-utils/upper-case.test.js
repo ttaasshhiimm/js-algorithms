@@ -48,6 +48,10 @@ describe("Tests upperCase() p6l10", () => {
         expect(toUpperCase('hello привет')).toEqual('HELLO ПРИВЕТ')
     });
 
+    test("Должна работать с ё кириллицы: ('ё') → 'Ё'", () => {
+        expect(toUpperCase('ё')).toEqual('Ё')
+    });
+
     test("Должна не менять уже заглавные буквы (включая кириллицу): ('ПРИВЕТ') → 'ПРИВЕТ'", () => {
         expect(toUpperCase('ПРИВЕТ')).toEqual('ПРИВЕТ')
     });
