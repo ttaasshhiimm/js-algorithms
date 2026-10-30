@@ -1,9 +1,6 @@
-import {checkString} from "./helpers/checkStrings";
-import {len} from "./len";
-
-
-
-
+import { checkString } from "./helpers/checkStrings";
+import { len } from "./len";
+import { indexOf } from "./index-of";
 /**
  * Заменяет все вхождения подстроки search в строке str на replacement.
  * Заменённый текст не участвует в дальнейшем поиске.
@@ -24,44 +21,41 @@ import {len} from "./len";
  */
 
 export function replaceAll(str, search, replacement) {
-    
-    checkString(str);
-    checkString(search);
-    checkString(replacement);
+  checkString(str);
+  checkString(search);
+  checkString(replacement);
 
-    const strLen = len(str);
-    const searchLen = len(search);
+  const strLen = len(str);
+  const searchLen = len(search);
 
-    if (searchLen === 0) {
-        let result = replacement;
-        for (let i = 0; i < strLen; i++) {
-            result += str[i];
-            result += replacement;
-        }
-        return result;
+  if (searchLen === 0) {
+    let result = replacement;
+    for (let i = 0; i < strLen; i++) {
+      result += str[i];
+      result += replacement;
     }
-
-    let result = '';
-    let i = 0;
-
-    while (i < strLen) {
-
-        let match = true;
-        for (let j = 0; j < searchLen; j++) {
-            if (i + j >= strLen || str[i + j] !== search[j]) {
-                match = false;
-                break;
-            }
-        }
-
-        if (match) {
-            result += replacement;
-            i += searchLen;
-        } else {
-            result += str[i];
-            i += 1;
-        }
-    }
-
     return result;
+  }
+
+  let result = "";
+  let i = 0;
+
+  while (i < strLen) {
+    
+    let tail = "";
+    for (let k = i; k < strLen; k++) {
+      tail += str[k];
+    }
+
+    const matchIndex = indexOf(tail, search);
+
+    if (matchIndex === 0) {
+      result += replacement; 
+      i += searchLen; 
+    } else {
+      result += str[i]; 
+      i += 1;
+    }
+  }
+  return result;
 }
