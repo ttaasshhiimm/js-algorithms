@@ -8,10 +8,6 @@ import {
 
 
 
-
-
-
-
 /**
  * Переворачивает строку str — возвращает новую строку с символами в обратном порядке.
  * Если строка пустая — возвращает пустую строку.
@@ -30,16 +26,12 @@ import {
  *   reverse('привет');  // 'тевирп'
  */
 export function reverse(str) {
-
     checkString(str);
-
     const lenStr = len(str);
     let reverseStr = '';
 
     for (let i = lenStr - 1; i >= 0; i--) {
         reverseStr += str[i];
     }
-
-
     return reverseStr;
 }
