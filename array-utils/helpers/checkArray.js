@@ -3,3 +3,4 @@ export function checkArray(array) {
         throw new TypeError('Аргумент должен быть массивом!');
     }
 }
+
